@@ -1,0 +1,2 @@
+module CancanHelper
+end

@@ -1,0 +1,14 @@
+<h1>Cancan#index</h1>
+<p>Find me in app/views/cancan/index.html.erb</p>
+<!-- 
+ -->
+<% if user_signed_in?  %> 
+    
+    <%= link_to "Log out", destroy_user_session_path, :method=>'delete'%>
+<% else %>
+    <%= link_to "login", new_user_session_path %>
+<% end %>
+<br>
+<%= link_to "sign In", user_session_path, method: :POST, class: 'dropdown-item text-success' %>
+<%= link_to "Wyloguj się", destroy_user_session_path, method: :delete, class: 'dropdown-item text-danger' %>
+
