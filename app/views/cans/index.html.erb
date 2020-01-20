@@ -2,19 +2,7 @@
 <p>Find me in app/views/cancan/index.html.erb</p>
 <!-- 
  -->
-<!-- <%= current_ability %> -->
-	 can  : <%= can? :index,User %> <br>
-	user
-	<% if can? :index,User%>
-		have 
-	<% else %>
-		dont have
-	<%end%>
-	have permission to view <br>
 <% if user_signed_in?  %> 
-	<%= current_user.email %>
-	<%= current_user.roles.find(1) %>
-
     
     <%= link_to "Log out", destroy_user_session_path, :method=>'delete'%>
 <% else %>
@@ -23,8 +11,4 @@
 <br>
 <%= link_to "sign In", user_session_path, method: :POST, class: 'dropdown-item text-success' %>
 <%= link_to "Wyloguj się", destroy_user_session_path, method: :delete, class: 'dropdown-item text-danger' %>
-
-
-<% console %>
-
 
