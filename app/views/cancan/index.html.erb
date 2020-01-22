@@ -1,5 +1,4 @@
-<h1>Cancan#index</h1>
-<p>Find me in app/views/cancan/index.html.erb</p>
+<h1>user#index</h1>
 <!-- 
  -->
 <!-- <%= current_ability %> -->
@@ -13,16 +12,15 @@
 	have permission to view <br>
 <% if user_signed_in?  %> 
 	<%= current_user.email %>
-	<%= current_user.roles.find(1) %>
 
     
     <%= link_to "Log out", destroy_user_session_path, :method=>'delete'%>
 <% else %>
     <%= link_to "login", new_user_session_path %>
 <% end %>
+    <%= link_to "rols Index", destroy_user_session_path, :method=>'index'%>
 <br>
-<%= link_to "sign In", user_session_path, method: :POST, class: 'dropdown-item text-success' %>
-<%= link_to "Wyloguj się", destroy_user_session_path, method: :delete, class: 'dropdown-item text-danger' %>
+
 
 
 <% console %>

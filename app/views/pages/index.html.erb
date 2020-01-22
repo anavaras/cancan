@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+     can  : <%= can? :index,Page %> <br>
+      user
+      <% if can? :index,Page%>
+        have 
+      <% else %>
+        dont have
+      <%end%>
+      have permission to view <br>
+    
+
+    <%if can? :update,Page%>
+      <% @pages.each do |page| %>
+        <tr>
+          <td><%= link_to 'Show', page %></td>
+          <td><%= link_to 'Edit', edit_page_path(page) %></td>
+          <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <%end%>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in?  %> 
+      <%= current_user.email %>
+
+        <%if can? :update,Page%>
+          <%= link_to 'New Page', new_page_path %>
+        <% end %>
+
+        <%= link_to "Log out", destroy_user_session_path, :method=>'delete'%>
+    <% else %>
+        <%= link_to "login", new_user_session_path %>
+    <% end %>    <br>
+
